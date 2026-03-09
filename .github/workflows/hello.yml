@@ -23,4 +23,4 @@ jobs:
               run: ls -la
 
             - name: Print Runner OS
-              run: echo "Runner OS is $Runner_OS"
+              run: echo "Runner OS is $RUNNER_OS"
