@@ -10,6 +10,8 @@ jobs:
         matrix:
           os : [ubuntu-latest,windows-latest,macos-latest]
 
+     runs-on: ${{ matrix.os }}    
+
      steps:
        - name: OS name
        - run : echo "This job is running on ${{ runner.os }}"
@@ -18,4 +20,5 @@ jobs:
        - run: hostname
        - shell: bash
 
-       - run: echo " This job is runned by ${{ github.actor }}""
+       - name: User name
+       - run: echo " This job is executed by ${{ github.actor }}"
