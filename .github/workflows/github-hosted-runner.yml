@@ -14,11 +14,11 @@ jobs:
 
      steps:
        - name: OS name
-       - run : echo "This job is running on ${{ runner.os }}"
+         run : echo "This job is running on ${{ runner.os }}"
 
        - name: Hostname of Runner
-       - run: hostname
-       - shell: bash
+         run: hostname
+         shell: bash
 
        - name: User name
-       - run: echo " This job is executed by ${{ github.actor }}"
+         run: echo " This job is executed by ${{ github.actor }}"
