@@ -3,19 +3,19 @@ name: Github Hosted Runner-preinstalled demo
 on:
   push:
 
-  jobs: 
-    runner-demo:
-     runs-on: ubuntu-latest
-     steps:
+jobs: 
+  runner-demo:
+    runs-on: ubuntu-latest
+    steps:
 
-        - name: Check Docker CLI version
-          run: docker --version
+       - name: Check Docker CLI version
+         run: docker --version
 
-        - name: Check Python Version
-          run: python --version
+       - name: Check Python Version
+         run: python --version
 
-        - name: Check Node Version
-          run: node -v
+       - name: Check Node Version
+         run: node -v
 
-        - name: Check Git Version
-          run: git --version   
+       - name: Check Git Version
+         run: git --version   
