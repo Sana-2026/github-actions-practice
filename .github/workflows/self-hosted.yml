@@ -1,17 +1,24 @@
-name: Self-Hosted Runner Test
+name: Self-Hosted Runner Demo
 
-on: 
-  push:
-     branches: [main]
+on:
+  workflow_dispatch:
 
 jobs:
   test-self-hosted:
-     runs-on: self-hosted
+    runs-on: self-hosted
 
-     steps: 
-        - name: Checkout code
-          uses: actions/checkout@v4
+    steps:
+      - name: Print hostname
+        run: hostname
 
-        - name: Run on self-hosted runner
-          run: echo "Hello from self-hosted runner ! "
+      - name: Print working directory
+        run: pwd
+
+      - name: Create a file
+        run: |
+          echo "This file was created by GitHub Actions on a self-hosted runner." > self-hosted-proof.txt
+          ls -l self-hosted-proof.txt
+
+      - name: Verify file exists
+        run: test -f self-hosted-proof.txt && echo "File exists"
 
