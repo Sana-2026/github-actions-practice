@@ -1,6 +1,5 @@
 # General dependencies
-requests>=2.28.0
-pandas==2.0.3
+
 numpy
 
 # Testing and Linting (if needed for CI)
