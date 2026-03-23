@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Give Execute Permissions
-        run: chmod+x ./system-info.sh
+        run: chmod +x ./system-info.sh
 
       - name: Run script
         run: ./system-info.sh
