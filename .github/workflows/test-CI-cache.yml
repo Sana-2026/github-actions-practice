@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Give Execute Permissions
-        run: chmod+x ./system-info.sh
+        run: chmod +x ./system-info.sh
 
       - name: Run script
         run: ./system-info.sh
@@ -25,5 +25,12 @@ jobs:
          with:
            python-version: '3.12'
            cache: 'pip'
+       
+       - name: Install dependencies
+         run: |
+          pip install -r requirements.txt || echo "No requirements file"
+
+       - name: Run Python script
+         run: python app.py  
 
        
