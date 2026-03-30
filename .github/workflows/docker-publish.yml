@@ -30,4 +30,4 @@ jobs:
 
             ${{secrets.DOCKER_USERNAME}}/ai-bankapp:${{github.ref_name}}
             ${{secrets.DOCKER_USERNAME}}/ai-bankapp:latest
-            ${{secrets.DOCKER_USERNAME}}/ai-bankapp:${{github.sha}i}
+            ${{secrets.DOCKER_USERNAME}}/ai-bankapp:${{github.sha}}
