@@ -9,10 +9,10 @@ on:
         type: string
       
       environment:
-         description: "Deployment environment"
-         required: true
-         type: string
-         default: "staging"
+        description: "Deployment environment"
+        required: true
+        type: string
+        default: "staging"
 
     secrets:
       docker_token: 
