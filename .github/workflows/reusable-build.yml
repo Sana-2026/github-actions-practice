@@ -16,8 +16,8 @@ on:
 
       secrets:
         docker_token: 
-        required: true
-        type: string
+          required: true
+          type: string 
 
 jobs:
   build:
