@@ -1,7 +1,7 @@
 name: Reusable Build Workflow
 
 on:
-  workflow_call
+  workflow_call:
     inputs:
       app_name:
         description: "Application name"
@@ -15,7 +15,8 @@ on:
          default: "staging"
 
       secrets:
-        docker_token: required
+        docker_token: 
+        required: true
 
 jobs:
   build:
@@ -26,11 +27,11 @@ jobs:
 
       - name: Print Build Info
         run: |
-          echo "Building ${{inputs.app_name}} for ${{inputs.environment}}"
+          echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
             
       - name: Verify Secret
         run: |
-          if [ -n "${{secrets.docker_token}}" ]; then
+          if [ -n "${{ secrets.docker_token }}" ]; then
             echo "Docker token is set: true"
           
           else
