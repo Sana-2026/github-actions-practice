@@ -21,7 +21,7 @@ on:
     outputs:
       build_version: 
         description: "Generated Build version"
-         value: ${{ jobs.build.outputs.build_version }}
+        value: ${{ jobs.build.outputs.build_version }}
 
          
 
