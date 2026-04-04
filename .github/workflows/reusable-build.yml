@@ -37,7 +37,7 @@ jobs:
       - name: Generate Version
         id: set_version
         run: |
-          VERSION= v1.0-${GITHUB_SHA::7}
+          VERSION=v1.0-${GITHUB_SHA::7}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Print Build Info
