@@ -1,9 +1,9 @@
-name: Call Reusable Build 
+name: Call Reusable Build
 
 on:
   push:
-    branches: [main]
-
+    branches:
+      - main
 
 jobs:
   build:
@@ -13,3 +13,12 @@ jobs:
       environment: "production"
     secrets:
       docker_token: ${{ secrets.DOCKER_TOKEN }}
+
+  print-version:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Print Version
+        run: |
+          echo "Build version is: ${{ needs.build.outputs.build_version }}"
