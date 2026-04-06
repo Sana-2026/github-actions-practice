@@ -4,7 +4,7 @@ on:
    types: [opened, synchronize, reopened, closed]
 jobs:
   pr-info:
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Print PR event Details
         run: |
