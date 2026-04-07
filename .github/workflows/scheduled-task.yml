@@ -25,7 +25,7 @@ jobs:
           echo "Performing health check..."
         
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://www.trainwithshubham.com/)
-          If [ "$RESPONSE" -ne 200 ]; then
+          if [ "$RESPONSE" -ne 200 ]; then
             echo "Health check failed with status code: $RESPONSE"
             exit 1
           fi
