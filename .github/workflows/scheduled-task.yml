@@ -1,0 +1,29 @@
+name: Scheduled Task
+
+on:
+  schedule:
+    - cron: '30 2 * * 1' # Runs every Monday at 2:30 AM UTC
+    - cron: '0 */6 * * *' # Runs every 6 hours
+    workflow_dispatch: # Allows manual triggering of the workflow 
+
+jobs:
+  scheduled-job:
+    runs-on: ubuntu-latest
+    steps:
+     
+      - name: Print triggered Scheduled Task
+        run: |
+          echo "This scheduled task is running  ${{ github.event.schedule }}."
+         
+      - name: Health check
+        run: |
+          echo "Performing health check..."
+          URL="https://example.com/"
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" $URL)
+          IF[ $RESPONSE -ne 200 ]; then
+            echo "Health check failed with status code: $RESPONSE"
+            exit 1
+          fi
+        
+          echo "Health check completed successfully."
+
