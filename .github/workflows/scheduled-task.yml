@@ -30,4 +30,4 @@ jobs:
             exit 1
           fi
         
-          echo "Health check completed successfully."
+        echo "Health check completed successfully:$RESPONSE"
