@@ -10,20 +10,24 @@ jobs:
   scheduled-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out code
+        uses: actions/checkout@v4
      
-      - name: Print triggered Scheduled Task
+      - name: Print which Scheduled triggered
         run: |
-          echo "This scheduled task is running  ${{ github.event.schedule }}."
-         
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+            echo "This workflow was triggered by a schedule event."
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then  
+            echo "This workflow was triggered manually."
+          fi
       - name: Health check
         run: |
           echo "Performing health check..."
-          URL="https://google.com"
-          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" $URL)
-          if [ "$RESPONSE" -ne 200 ]; then
+        
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://www.trainwithshubham.com/)
+          If [ "$RESPONSE" -ne 200 ]; then
             echo "Health check failed with status code: $RESPONSE"
             exit 1
           fi
         
           echo "Health check completed successfully."
-
