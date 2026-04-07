@@ -10,6 +10,7 @@ jobs:
       - name: check out Code
         uses: actions/checkout@v3
 
+      - name: Check for Large Files
         run: |
           # check for files larger than 1MB and fail if any are found
            file=${{ find . -type f -size +1M }}
