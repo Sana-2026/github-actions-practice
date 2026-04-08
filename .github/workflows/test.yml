@@ -1,7 +1,7 @@
 name: Github Hosted Runner-preinstalled demo
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs: 
   runner-demo:
