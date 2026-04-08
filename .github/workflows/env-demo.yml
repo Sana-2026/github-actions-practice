@@ -1,9 +1,8 @@
 name: Environment variable Demo
 
 on:
-  push:
-    branches: [main]
-
+  workflow_dispatch:
+    
 env:  #workflow level
   APP_NAME: myapp
 
