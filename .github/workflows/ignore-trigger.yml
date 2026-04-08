@@ -6,7 +6,7 @@ on:
       - release/*
     paths-ignore:
       - 'docs/**'  # Ignore changes in the docs/ directory
-      - *.md  # Ignore changes to markdown files
+      - '*.md'  # Ignore changes to markdown files
     
 jobs:
   ignore-docs-changes:
